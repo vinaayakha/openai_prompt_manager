@@ -1,8 +1,19 @@
 # OpenaiPromptManager
-Short description and motivation.
+Manage reusable prompts and tool definitions for OpenAI integrations in a Rails
+application.
 
 ## Usage
-How to use my plugin.
+Run the engine migrations and create your prompts and tools using the provided
+ActiveRecord models.
+
+```ruby
+# Example
+tool = OpenaiPromptManager::Tool.create!(name: "Summarizer")
+prompt = tool.prompts.create!(name: "Summary", content: "Summarize: {text}")
+
+client = OpenaiPromptManager::Client.new
+client.call(prompt, variables: { text: "Hello" }, model: "gpt-3.5-turbo")
+```
 
 ## Installation
 Add this line to your application's Gemfile:
