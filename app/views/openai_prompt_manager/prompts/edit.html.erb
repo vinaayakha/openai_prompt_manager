@@ -1,0 +1,5 @@
+<h1>Edit Prompt for <%= @tool.name %></h1>
+
+<%= render 'form', tool: @tool, prompt: @prompt %>
+
+<%= link_to 'Back', tool_prompts_path(@tool) %>

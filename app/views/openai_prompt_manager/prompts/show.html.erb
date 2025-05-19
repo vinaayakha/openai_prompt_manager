@@ -1,0 +1,14 @@
+<h2>Prompt Details</h2>
+
+<p>
+  <strong>Name:</strong>
+  <%= @prompt.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= simple_format(@prompt.content) %>
+</p>
+
+<%= link_to 'Edit', edit_tool_prompt_path(@tool, @prompt) %> |
+<%= link_to 'Back', tool_prompts_path(@tool) %>
